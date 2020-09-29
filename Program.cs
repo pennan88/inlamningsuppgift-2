@@ -15,6 +15,7 @@ namespace Uppgift2
 
         public static Energy Daily = new Energy();
         public static BankAccount BankOptions = new BankAccount();
+        public static TestException Test01 = new TestException();
         public static string date = DateTime.Now.ToString("dd-MMMM-yyyy");
 
         static void Main(string[] args)
@@ -49,6 +50,8 @@ namespace Uppgift2
             Console.WriteLine("3. Go to work. ");
             Console.WriteLine("4. Go to sleep. ");
             Console.WriteLine("5. Remove yourself from existence. ");
+            Console.WriteLine("6. Exception. ");
+
 
 
             string MenuChange = Console.ReadLine();
@@ -101,9 +104,7 @@ namespace Uppgift2
                                 case "3":
 
                                     car03.CarAuction();
-
                                     return true;
-
                             }
                             break;
 
@@ -216,6 +217,15 @@ namespace Uppgift2
 
                 case "5":
                     return false;
+
+                case "6":
+                    {
+                        Console.Clear();
+                        Test01.Exception01();
+                        Console.ReadLine();
+                    }
+
+                    return true;
 
                 default:
                     Console.WriteLine("Unknow input");
