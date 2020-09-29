@@ -1,20 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 
 namespace Uppgift2
 {
+
     public class Program
     {
+
         public static Energy Daily = new Energy();
         public static BankAccount BankOptions = new BankAccount();
-        public static string date = DateTime.Now.ToString("yyyy-MMMM-dd" + " HH:mm:ss tt\n");
+
+        public static string date = DateTime.Now.ToString("dd-MMMM-yyyy");
+
+
+
 
         static void Main(string[] args)
         {
+
 
 
             bool showMenu = true;
@@ -22,6 +31,7 @@ namespace Uppgift2
             {
 
                 showMenu = MainMenu();
+
             }
 
         }
@@ -39,7 +49,10 @@ namespace Uppgift2
 
 
 
-            Console.Write(date);
+            Console.WriteLine(date);
+
+
+
             Console.WriteLine("Daily Energy: " + Energy.Workenergy + "\n");
             Console.WriteLine("1. Go to the car dealer. ");
             Console.WriteLine("2. Go to the bank. ");
@@ -78,6 +91,7 @@ namespace Uppgift2
 
                         case "y":
                             Console.WriteLine("Which of the cars would you like to buy? ");
+                            Console.WriteLine("Available ammount: " + BankAccount.Card_Balance.CardBalance + "$\n");
                             Console.WriteLine("1. The Audi R8. 570000$");
                             Console.WriteLine("2. The BMW I6. 87900$ ");
                             Console.WriteLine("3. The Honda Civic. 13400$ ");
@@ -141,11 +155,12 @@ namespace Uppgift2
                         case "3":
                             Console.Clear();
                             Console.WriteLine("How much would you like to withdaw? ");
+                            Console.WriteLine("Available ammount: " + BankAccount.account01.Balance + "$\n");
                             Console.WriteLine("1. 1000$");
                             Console.WriteLine("2. 3000$");
                             Console.WriteLine("3. 5000$");
                             Console.WriteLine("4. 10000$");
-                            Console.WriteLine("5. Everything");
+                            Console.WriteLine("5. Everything ");
 
                             switch (Console.ReadLine())
                             {
@@ -174,7 +189,7 @@ namespace Uppgift2
                                     break;
                                 case "5":
                                     Console.Clear();
-                                    Console.WriteLine("You transfered " + BankAccount.account01.Balance + "$ \n");
+                                    Console.WriteLine("You withdrew " + BankAccount.account01.Balance + "$ from your bank account\n");
                                     BankAccount.Card_Balance.CardBalance += BankAccount.account01.Balance;
                                     BankAccount.account01.Balance -= BankAccount.account01.Balance;
                                     Console.ReadLine();
@@ -217,6 +232,9 @@ namespace Uppgift2
                     Console.ReadLine();
                     return true;
             }
+
+
+
         }
     }
 }

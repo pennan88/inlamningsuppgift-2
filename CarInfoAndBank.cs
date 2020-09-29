@@ -4,10 +4,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Threading;
 using Uppgift2;
 
 namespace Uppgift2
 {
+
 
     //-----------------------------------------------------------------------------------------------------
     // Bil klass.
@@ -108,16 +110,16 @@ namespace Uppgift2
         // Här kan man ta ut pengar från banken till sit kort -- kort
         //-----------------------------------------------------------------------------------------------------
 
-        public void Bank_Withdraw(int _num1)
+        public void Bank_Withdraw(int _ammount)
         {
-            if (account01.Balance < _num1)
+            if (account01.Balance < _ammount)
             {
                 Console.WriteLine("You dont have enough money to withdraw.");
             }
             else
             {
-                int num1 = _num1;
-                Console.WriteLine("You withdrew " + _num1 + "$ from your bank account.");
+                int num1 = _ammount;
+                Console.WriteLine("You withdrew " + _ammount + "$ from your bank account.");
                 account01.Balance -= num1;
                 Card_Balance.CardBalance += num1;
             }
@@ -130,11 +132,11 @@ namespace Uppgift2
 
     public class Job : BankAccount
     {
-        public static Job jobtest = new Job();
+        public static Job PaymentJob = new Job();
         public static double JobPay;
         public Random Income = new Random();
 
-        public double Jobtest()
+        public double Job_Pay()
         {
             JobPay = Income.Next(500, 2500);
             return JobPay;
@@ -156,6 +158,7 @@ namespace Uppgift2
             if (Workenergy <= 0)
             {
                 Console.WriteLine("You are too tired");
+
                 Console.ReadLine();
 
             }
@@ -163,8 +166,9 @@ namespace Uppgift2
             else
             {
                 Console.WriteLine("You went to work....\n");
-                Console.WriteLine("You earned " + jobtest.Jobtest() + "$");
+                Console.WriteLine("You earned " + PaymentJob.Job_Pay() + "$");
                 account01.Balance += JobPay;
+
                 Workenergy--;
                 Console.ReadLine();
             }
@@ -197,8 +201,9 @@ namespace Uppgift2
             }
         }
     }
-
 }
+
+
 
 
 
