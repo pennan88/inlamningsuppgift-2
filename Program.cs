@@ -50,7 +50,7 @@ namespace Uppgift2
             Console.WriteLine("3. Go to work. ");
             Console.WriteLine("4. Go to sleep. ");
             Console.WriteLine("5. Remove yourself from existence. ");
-            Console.WriteLine("6. Exception. ");
+            Console.WriteLine("6. Calculator. ");
 
 
 
