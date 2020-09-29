@@ -15,16 +15,10 @@ namespace Uppgift2
 
         public static Energy Daily = new Energy();
         public static BankAccount BankOptions = new BankAccount();
-
         public static string date = DateTime.Now.ToString("dd-MMMM-yyyy");
-
-
-
 
         static void Main(string[] args)
         {
-
-
 
             bool showMenu = true;
             while (showMenu)
@@ -47,11 +41,7 @@ namespace Uppgift2
             Carinfo car02 = new Carinfo("BMW", "I6", "V8", "Red", 87900);
             Carinfo car03 = new Carinfo("Honda", "Civic", "V8", "Black", 13400);
 
-
-
             Console.WriteLine(date);
-
-
 
             Console.WriteLine("Daily Energy: " + Energy.Workenergy + "\n");
             Console.WriteLine("1. Go to the car dealer. ");
