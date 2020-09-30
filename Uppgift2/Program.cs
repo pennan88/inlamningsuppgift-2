@@ -38,9 +38,11 @@ namespace Uppgift2
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Black;
 
-            Carinfo car01 = new Carinfo("Audi", "R8", "V10", "Black", 570000);
-            Carinfo car02 = new Carinfo("BMW", "I6", "V8", "Red", 87900);
-            Carinfo car03 = new Carinfo("Honda", "Civic", "V8", "Black", 13400);
+            Carinfo car01 = new Carinfo("Audi", "R8", "V10", "Black", 162433);
+            Carinfo car02 = new Carinfo("BMW", "I8", "1.5-liter three-Cylinder gas engine", "Red", 149900);
+            Carinfo car03 = new Carinfo("Honda", "Civic-Type R", "2.0 VTEC Turbo", "Black", 52908);
+            Carinfo car04 = new Carinfo("Volvo", "V60", "B3 Four-cylinder turbo petrol engine", "White", 39718);
+            Carinfo car05 = new Carinfo("Volvo", "740", "B19 I4", "Grey", 1334);
 
             Console.WriteLine(date);
 
@@ -49,10 +51,8 @@ namespace Uppgift2
             Console.WriteLine("2. Go to the bank. ");
             Console.WriteLine("3. Go to work. ");
             Console.WriteLine("4. Go to sleep. ");
-            Console.WriteLine("5. Remove yourself from existence. ");
-            Console.WriteLine("6. Calculator. ");
-
-
+            Console.WriteLine("5. Calculator. ");
+            Console.WriteLine("6. Remove yourself from existence. ");
 
             string MenuChange = Console.ReadLine();
 
@@ -63,11 +63,13 @@ namespace Uppgift2
                     Console.Clear();
                     Console.WriteLine("Hello! Welcome to your local car dealer.\n");
                     Console.WriteLine("These are the cars we have in store. \n");
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.White;
 
                     car01.CarInfo();
                     car02.CarInfo();
                     car03.CarInfo();
+                    car04.CarInfo();
+                    car05.CarInfo();
 
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Black;
@@ -85,9 +87,11 @@ namespace Uppgift2
                         case "y":
                             Console.WriteLine("Which of the cars would you like to buy? ");
                             Console.WriteLine("Available ammount: " + BankAccount.Card_Balance.CardBalance + "$\n");
-                            Console.WriteLine("1. The Audi R8. 570000$");
-                            Console.WriteLine("2. The BMW I6. 87900$ ");
-                            Console.WriteLine("3. The Honda Civic. 13400$ ");
+                            Console.WriteLine("1. Audi R8. 162433$");
+                            Console.WriteLine("2. BMW I6. 149900$ ");
+                            Console.WriteLine("3. Honda Civic Type R. 52908$ ");
+                            Console.WriteLine("4. Volvo V60. 39718$ ");
+                            Console.WriteLine("5. Volvo 740. 1334$ ");
                             string BuyCar = Console.ReadLine();
                             Console.Clear();
 
@@ -102,8 +106,15 @@ namespace Uppgift2
                                     return true;
 
                                 case "3":
-
                                     car03.CarAuction();
+                                    return true;
+
+                                case "4":
+                                    car04.CarAuction();
+                                    return true;
+
+                                case "5":
+                                    car05.CarAuction();
                                     return true;
                             }
                             break;
@@ -216,16 +227,17 @@ namespace Uppgift2
                     return true;
 
                 case "5":
-                    return false;
-
-                case "6":
                     {
                         Console.Clear();
                         Calculator.Exception01();
                         Console.ReadLine();
                     }
-
                     return true;
+
+                case "6":
+                   
+
+                    return false;
 
                 default:
                     Console.WriteLine("Unknow input");
