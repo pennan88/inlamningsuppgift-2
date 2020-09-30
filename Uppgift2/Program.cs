@@ -13,7 +13,7 @@ namespace Uppgift2
     public class Program
     {
 
-        public static Energy Daily = new Energy();
+        public static Worker Daily = new Worker();
         public static BankAccount BankOptions = new BankAccount();
         public static CalcException Calculator = new CalcException();
         public static string date = DateTime.Now.ToString("dd-MMMM-yyyy");
@@ -44,7 +44,7 @@ namespace Uppgift2
 
             Console.WriteLine(date);
 
-            Console.WriteLine("Daily Energy: " + Energy.Workenergy + "\n");
+            Console.WriteLine("Daily Energy: " + Worker.Workenergy + "\n");
             Console.WriteLine("1. Go to the car dealer. ");
             Console.WriteLine("2. Go to the bank. ");
             Console.WriteLine("3. Go to work. ");

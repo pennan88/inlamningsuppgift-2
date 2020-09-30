@@ -106,7 +106,7 @@ namespace Uppgift2
         }
 
         //-----------------------------------------------------------------------------------------------------
-        // Här kan man ta ut pengar från banken till sit kort -- kort
+        // Här kan man ta ut pengar från banken till sitt kort
         //-----------------------------------------------------------------------------------------------------
 
         public void Bank_Withdraw(int _ammount)
@@ -126,11 +126,12 @@ namespace Uppgift2
     }
 
     //-----------------------------------------------------------------------------------------------------
-    // Här en är en klass Job som även ärver från BankAccount
+    // Här en är en klass som heter Job 
     //-----------------------------------------------------------------------------------------------------
 
-    public class Job : BankAccount
+    public class Job
     {
+
         public static Job PaymentJob = new Job();
         public static double JobPay;
         public Random Income = new Random();
@@ -144,17 +145,22 @@ namespace Uppgift2
     }
 
     //-----------------------------------------------------------------------------------------------------
-    // Klass som heter "Energy" ärver från job och här har man metoder så som "Work" och "Sleep"
+    // Klass som heter "Worker" med metoder så som "Work" och "Sleep"
     //-----------------------------------------------------------------------------------------------------
 
-    public class Energy : Job
+    public class Worker
     {
+        public static double WorkerBankBalance = BankAccount.account01.Balance;
+        public static double WorkerPay = Job.JobPay;
+        public static double WorkerCard = BankAccount.Card_Balance.CardBalance;
+
         public static int Workenergy = 2;
 
 
         public void Work()
         {
             if (Workenergy <= 0)
+
             {
                 Console.WriteLine("You are too tired");
 
@@ -165,8 +171,8 @@ namespace Uppgift2
             else
             {
                 Console.WriteLine("You went to work....\n");
-                Console.WriteLine("You earned " + PaymentJob.Job_Pay() + "$");
-                account01.Balance += JobPay;
+                Console.WriteLine("You earned " + Job.PaymentJob.Job_Pay() + "$");
+                BankAccount.account01.Balance += Job.JobPay;
 
                 Workenergy--;
                 Console.ReadLine();
@@ -189,7 +195,6 @@ namespace Uppgift2
                 Workenergy++;
                 Console.ReadLine();
             }
-
             else
             {
                 Console.Clear();
@@ -253,22 +258,7 @@ namespace Uppgift2
             }
         }
     }
-    public static class CTest
-    {
-        public static double Add(double x, double y)
-        {
-            return x + y;
-        }
-        public static double Subtract(double x, double y)
-        {
-            return x - y;
-        }
-        public static double Multiply(double x, double y)
-        {
-            return x * y;
-        }
-    }
-
+    
 }
 
 
