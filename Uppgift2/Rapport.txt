@@ -1,0 +1,18 @@
+﻿Jag gjorde ett applikation där man kan köpa bilar, jobba, sova och kolla hur mycket pengar man har.
+
+Jag gjorde en klass till mina bilar som heter "CarSpecs" där jag har variblar till några delar som behöves till en bil
+Sen har jag en konstructor till "Carinfo" för att jag enkelt ska kunna skapa en ny bil. Ref till rad 41-45 i Program.cs. sedan gjorde
+jag två metoder till "CarSpecs" som heter "CarInfo" och "CarAuction", så att på "CarInfo" ger info om alla variablar från min konstructor
+sedan på "CarAuction" så sker auctionen för den valda bilen man ska köpa, detta kollar även om man har tillräckligt med pengar. 
+
+
+Jag gjorde även en klass som heter "Job" som ger än ett Random nummber mellan 500-2500 vilket läggs i en variabel som heter JobPay.
+Gjorde sedan därefter en klass som heter Worker som innehåller två metoder, "Work" och "Sleep", på "Work" får pengar från JobPay till mitt bankkonto
+sålänge min variabel "Workenergy" inte är mindre än 0. "Sleep" metoden kan man säga återställer min "Workenergy" till 2, man kan ej gå över två.
+
+Mitt Xunit test är simpelt den testar så att att när jag får betalt så kommer pengarna till BankBalance och inte CashBalance
+genom att testa att BankBalance inte är samma som CashBalance.
+
+
+
+

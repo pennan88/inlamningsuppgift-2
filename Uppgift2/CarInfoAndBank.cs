@@ -15,7 +15,7 @@ namespace Uppgift2
     // Bil klass.
     //-----------------------------------------------------------------------------------------------------
 
-    public class Carinfo
+    public class CarSpecs
     {
         public string Color = "";
         public string Type = "";
@@ -26,7 +26,7 @@ namespace Uppgift2
         //-----------------------------------------------------------------------------------------------------
         // En constructor så man kan definera exempelvis vilken sorts bil.
         //-----------------------------------------------------------------------------------------------------
-        public Carinfo(string _Type, string _Model, string _Engine, string _Color, int _Cost)
+        public CarSpecs(string _Type, string _Model, string _Engine, string _Color, int _Cost)
         {
             Engine = _Engine;
             Type = _Type;
@@ -76,7 +76,7 @@ namespace Uppgift2
 
     public class BankAccount
     {
-        public double Balance;
+        public double BankBalance;
         public double CardBalance;
         public static BankAccount Card_Balance = new BankAccount();
         public static BankAccount account01 = new BankAccount();
@@ -91,7 +91,7 @@ namespace Uppgift2
         }
         public void Bank_Balance()
         {
-            Console.WriteLine("Balance bank: " + account01.Balance + "$");
+            Console.WriteLine("Balance bank: " + account01.BankBalance + "$");
         }
 
         //-----------------------------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ namespace Uppgift2
         public void Bank_Deposit()
         {
             Console.WriteLine($"You deposited {Card_Balance.CardBalance}$ to your bank account.");
-            account01.Balance += Card_Balance.CardBalance;
+            account01.BankBalance += Card_Balance.CardBalance;
             Card_Balance.CardBalance -= Card_Balance.CardBalance;
         }
 
@@ -111,7 +111,7 @@ namespace Uppgift2
 
         public void Bank_Withdraw(int _ammount)
         {
-            if (account01.Balance < _ammount)
+            if (account01.BankBalance < _ammount)
             {
                 Console.WriteLine("You dont have enough money to withdraw.");
             }
@@ -119,7 +119,7 @@ namespace Uppgift2
             {
                 int num1 = _ammount;
                 Console.WriteLine("You withdrew " + _ammount + "$ from your bank account.");
-                account01.Balance -= num1;
+                account01.BankBalance -= num1;
                 Card_Balance.CardBalance += num1;
             }
         }
@@ -150,7 +150,7 @@ namespace Uppgift2
 
     public class Worker
     {
-        public static double WorkerBankBalance = BankAccount.account01.Balance;
+        public static double WorkerBankBalance = BankAccount.account01.BankBalance;
         public static double WorkerPay = Job.JobPay;
         public static double WorkerCard = BankAccount.Card_Balance.CardBalance;
 
@@ -172,7 +172,7 @@ namespace Uppgift2
             {
                 Console.WriteLine("You went to work....\n");
                 Console.WriteLine("You earned " + Job.PaymentJob.Job_Pay() + "$");
-                BankAccount.account01.Balance += Job.JobPay;
+                BankAccount.account01.BankBalance += Job.JobPay;
 
                 Workenergy--;
                 Console.ReadLine();

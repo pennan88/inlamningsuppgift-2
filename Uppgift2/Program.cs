@@ -38,11 +38,11 @@ namespace Uppgift2
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Black;
 
-            Carinfo car01 = new Carinfo("Audi", "R8", "V10", "Black", 162433);
-            Carinfo car02 = new Carinfo("BMW", "I8", "1.5-liter three-Cylinder gas engine", "Red", 149900);
-            Carinfo car03 = new Carinfo("Honda", "Civic-Type R", "2.0 VTEC Turbo", "Black", 52908);
-            Carinfo car04 = new Carinfo("Volvo", "V60", "B3 Four-cylinder turbo petrol engine", "White", 39718);
-            Carinfo car05 = new Carinfo("Volvo", "740", "B19 I4", "Grey", 1334);
+            CarSpecs car01 = new CarSpecs("Audi", "R8", "V10", "Black", 162433);
+            CarSpecs car02 = new CarSpecs("BMW", "I8", "1.5-liter three-Cylinder gas engine", "Red", 149900);
+            CarSpecs car03 = new CarSpecs("Honda", "Civic-Type R", "2.0 VTEC Turbo", "Black", 52908);
+            CarSpecs car04 = new CarSpecs("Volvo", "V60", "B3 Four-cylinder turbo petrol engine", "White", 39718);
+            CarSpecs car05 = new CarSpecs("Volvo", "740", "B19 I4", "Grey", 1334);
 
             Console.WriteLine(date);
 
@@ -157,7 +157,7 @@ namespace Uppgift2
                         case "3":
                             Console.Clear();
                             Console.WriteLine("How much would you like to withdaw? ");
-                            Console.WriteLine("Available ammount: " + BankAccount.account01.Balance + "$\n");
+                            Console.WriteLine("Available ammount: " + BankAccount.account01.BankBalance + "$\n");
                             Console.WriteLine("1. 1000$");
                             Console.WriteLine("2. 3000$");
                             Console.WriteLine("3. 5000$");
@@ -191,9 +191,9 @@ namespace Uppgift2
                                     break;
                                 case "5":
                                     Console.Clear();
-                                    Console.WriteLine("You withdrew " + BankAccount.account01.Balance + "$ from your bank account\n");
-                                    BankAccount.Card_Balance.CardBalance += BankAccount.account01.Balance;
-                                    BankAccount.account01.Balance -= BankAccount.account01.Balance;
+                                    Console.WriteLine("You withdrew " + BankAccount.account01.BankBalance + "$ from your bank account\n");
+                                    BankAccount.Card_Balance.CardBalance += BankAccount.account01.BankBalance;
+                                    BankAccount.account01.BankBalance -= BankAccount.account01.BankBalance;
                                     Console.ReadLine();
                                     break;
 

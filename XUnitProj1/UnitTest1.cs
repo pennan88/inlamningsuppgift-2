@@ -12,7 +12,7 @@ namespace TestProject1
         public void Test1()
         {
             Job.PaymentJob.Job_Pay();
-            BankAccount.account01.Balance += Job.JobPay;
+            BankAccount.account01.BankBalance += Job.JobPay;
 
             double expected = Worker.WorkerBankBalance;
 
