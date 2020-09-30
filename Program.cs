@@ -15,7 +15,7 @@ namespace Uppgift2
 
         public static Energy Daily = new Energy();
         public static BankAccount BankOptions = new BankAccount();
-        public static TestException Test01 = new TestException();
+        public static CalcException Calculator = new CalcException();
         public static string date = DateTime.Now.ToString("dd-MMMM-yyyy");
 
         static void Main(string[] args)
@@ -221,7 +221,7 @@ namespace Uppgift2
                 case "6":
                     {
                         Console.Clear();
-                        Test01.Exception01();
+                        Calculator.Exception01();
                         Console.ReadLine();
                     }
 

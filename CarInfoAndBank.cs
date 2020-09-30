@@ -201,21 +201,24 @@ namespace Uppgift2
         }
     }
 
-    public class TestException
+    public class CalcException
     {
+        public static double num1;
+        public string op;
+        public static double num2;
         public void Exception01()
         {
             try
             {
 
                 Console.Write("Enter your first number! ");
-                double num1 = Convert.ToDouble(Console.ReadLine());
+                num1 = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Enter your Operator! ");
-                string op = Console.ReadLine();
+                op = Console.ReadLine();
 
                 Console.Write("Enter your second number! ");
-                double num2 = Convert.ToDouble(Console.ReadLine());
+                num2 = Convert.ToDouble(Console.ReadLine());
 
 
                 if (op == "+")
@@ -242,7 +245,7 @@ namespace Uppgift2
                 {
                     Console.WriteLine("Unknown Operator!");
                 }
-                Console.WriteLine("Press any key to quit: ");  
+                Console.WriteLine("Press any key to quit: ");
             }
             catch
             {
@@ -250,6 +253,22 @@ namespace Uppgift2
             }
         }
     }
+    public static class CTest
+    {
+        public static double Add(double x, double y)
+        {
+            return x + y;
+        }
+        public static double Subtract(double x, double y)
+        {
+            return x - y;
+        }
+        public static double Multiply(double x, double y)
+        {
+            return x * y;
+        }
+    }
+
 }
 
 
